@@ -1,0 +1,36 @@
+.dashboard-title {
+    @apply text-3xl mb-4;
+}
+
+.card {
+    @apply bg-white border border-[#bdbdbd] rounded-md overflow-hidden;
+
+    .card-header {
+        @apply px-4 py-3 bg-[#f7f7f7];
+    }
+
+    .card-body {
+        @apply p-4 h-64;
+    }
+}
+
+.table-wrapper {
+    @apply border border-[#bdbdbd] overflow-hidden overflow-x-auto;
+
+    .table {
+        @apply w-full min-w-[35rem] text-sm text-left border border-[#bdbdbd] rounded-md overflow-hidden border-collapse;
+
+        thead {
+            @apply bg-[#f5f5f5];
+        }
+
+        th,
+        td {
+            @apply px-8 py-4 border border-[#bdbdbd] text-center font-normal;
+        }
+
+        tbody tr:hover {
+            @apply bg-gray-50;
+        }
+    }
+}

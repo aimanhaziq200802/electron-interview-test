@@ -1,0 +1,47 @@
+<div *ngIf="!isLoading && dashboardData" class="p-8">
+    <div class="dashboard-title">Overview</div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+        <div class="card">
+            <div class="card-header">Card Title</div>
+            <div class="card-body">
+                <canvas class="mx-auto" #doughnutCanvas></canvas>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Card Title</div>
+            <div class="card-body content-end">
+                <canvas class="mx-auto w-full h-full" #barCanvas></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-title">User List</div>
+
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="w-[10%]">#</th>
+                    <th scope="col" class="w-[20%]">First Name</th>
+                    <th scope="col" class="w-[20%]">Last Name</th>
+                    <th scope="col" class="w-[50%] !text-left">User Name</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let user of dashboardData.tableUsers; let i = index">
+                    <th>{{ i + 1 }}</th>
+                    <td>{{ user.firstName }}</td>
+                    <td>{{ user.lastName }}</td>
+                    <td class="!text-left">{{ user.username }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div *ngIf="isLoading" class="flex items-center justify-center h-[80vh]">
+    <div>Loading...</div>
+</div>

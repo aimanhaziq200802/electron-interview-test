@@ -1,0 +1,13 @@
+<section class="h-screen flex items-center justify-center bg-gray-50">
+    <div class="border border-solid border-[#9e9e9e] rounded-lg w-96 shadow-sm overflow-hidden bg-white">
+        <div class="text-center py-2 bg-[#f7f7f7]">Sign in to your dashboard</div>
+
+        <form [formGroup]="loginForm" class="flex flex-col gap-4 px-4 pb-4 pt-6" (submit)="onSubmit()">
+            <input class="login-input" placeholder="Username" formControlName="username" />
+
+            <input class="login-input" type="password" placeholder="Password" formControlName="password" />
+
+            <button [disabled]="isLoading" class="login-button" type="submit">Sign in</button>
+        </form>
+    </div>
+</section>
