@@ -6,10 +6,17 @@
 /out-tsc
 /bazel-out
 
+# Electron build output
+/release
+/dist-electron
+
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
+
+# Electron cache / packaged files
+*.asar
 
 # IDEs and editors
 .idea/
@@ -36,6 +43,10 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+
+# Environment files
+.env
+.env.*
 
 # System files
 .DS_Store
