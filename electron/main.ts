@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron';
+import path from 'path';
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -12,7 +13,11 @@ const createWindow = () => {
         },
     });
 
-    mainWindow.loadURL('http://localhost:4200');
+    if (!app.isPackaged) {
+        mainWindow.loadURL('http://localhost:4200');
+    } else {
+        mainWindow.loadFile(path.join(__dirname, '../dist/interview-test/index.html'));
+    }
 };
 
 app.whenReady().then(() => {
