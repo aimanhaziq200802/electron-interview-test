@@ -23,3 +23,8 @@ Run Angular with Electron:
 ```bash
 npm run electron:dev
 ```
+---
+
+## Demo
+
+![Alt Text](./src/assets/interview-q2.gif)
